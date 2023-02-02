@@ -120,6 +120,14 @@ coverage/
    1. `vite` only recognizes `jsx` files and not `js` files. there are many reasons why this happens but, just remember that when working with `vite` use `jsx` files.
    2. vite is used to build or package the project.
 
+### 🟢 Configuring ESLint with React
+
+1. Install the following packages -
+
+   ```bash
+   npm install -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+   ```
+
 ## Production Dependencies
 
 ### 🟢 React
@@ -129,3 +137,5 @@ coverage/
    ```bash
    npm i react react-dom
    ```
+
+2. Done.
