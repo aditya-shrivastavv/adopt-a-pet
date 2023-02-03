@@ -128,6 +128,52 @@ coverage/
    npm install -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
    ```
 
+   ```bash
+   npm install -D eslint-plugin-react-hooks
+   ```
+
+   .eslint.json file -
+
+   ```json
+   {
+     "extends": [
+       "eslint:recommended",
+       "plugin:import/errors",
+       "plugin:react/recommended",
+       "plugin:jsx-a11y/recommended",
+       "plugin:react-hooks/recommended",
+       "prettier"
+     ],
+     "rules": {
+       "react/prop-types": 0,
+       "react/react-in-jsx-scope": 0
+     },
+     "plugins": ["react", "import", "jsx-a11y"],
+     "parserOptions": {
+       "ecmaVersion": 2022,
+       "sourceType": "module",
+       "ecmaFeatures": {
+         "jsx": true
+       }
+     },
+     "env": {
+       "es6": true,
+       "browser": true,
+       "node": true
+     },
+     "settings": {
+       "react": {
+         "version": "detect"
+       },
+       "import/resolver": {
+         "node": {
+           "extensions": [".js", ".jsx"]
+         }
+       }
+     }
+   }
+   ```
+
 ## Production Dependencies
 
 ### 🟢 React
