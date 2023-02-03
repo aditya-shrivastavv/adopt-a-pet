@@ -83,3 +83,8 @@ export default function SearchParams() {
     </div>
   );
 }
+
+/*
+This is called a control form, since we are using react to precisely control our form.
+This is not best practice
+*/
