@@ -17,13 +17,15 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Link to="/">Adopt Me!</Link>
-      </header>
-      <Routes>
-        <Route path="/details/:id" element={<Details />} />
-        <Route path="/" element={<SearchParams />} />
-      </Routes>
+      <QueryClientProvider client={queryClient}>
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
+        <Routes>
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/" element={<SearchParams />} />
+        </Routes>
+      </QueryClientProvider>
     </BrowserRouter>
   );
 }
