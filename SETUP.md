@@ -96,7 +96,7 @@ coverage/
 .vscode/
 ```
 
-### + Vite
+### 🟢 Vite
 
 1. Install Vite
 
@@ -173,6 +173,14 @@ coverage/
      }
    }
    ```
+
+### 🟢 React Additionals
+
+#### 🟠 React Router
+
+```bash
+npm i react-router-dom
+```
 
 ## Production Dependencies
 
