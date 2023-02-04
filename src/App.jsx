@@ -1,8 +1,18 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Details from "./Details";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import Details from "./Details";
 import SearchParams from "./SearchParams";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      cacheTime: Infinity,
+    },
+  },
+});
 
 function App() {
   return (

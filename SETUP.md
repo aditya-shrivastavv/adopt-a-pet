@@ -182,6 +182,12 @@ coverage/
 npm i react-router-dom
 ```
 
+#### 🟠 React Query
+
+```bash
+npm i @tanstack/react-query
+```
+
 ## Production Dependencies
 
 ### 🟢 React
