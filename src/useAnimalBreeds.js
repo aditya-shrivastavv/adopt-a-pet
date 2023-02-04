@@ -25,7 +25,7 @@ export default function useAnimalBreeds(animal) {
       const response = await fetch(
         `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
       );
-      const json = response.json();
+      const json = await response.json();
       localCache[animal] = json.breeds || [];
       setAnimalBreeds(localCache[animal]);
       setStatus("loaded");

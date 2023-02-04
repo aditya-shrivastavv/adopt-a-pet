@@ -13,6 +13,7 @@ export default function Results({ pets }) {
             breed={pet.breed}
             images={pet.images}
             location={`${pet.city}, ${pet.state}`}
+            id={pet.id}
             key={pet.id}
           />
         ))
