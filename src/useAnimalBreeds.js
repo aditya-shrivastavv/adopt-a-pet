@@ -1,36 +1,15 @@
 // pass the animal get it's breeds
 
-import { useState, useEffect } from "react";
-
-const localCache = {};
+import { useQuery } from "@tanstack/react-query";
+import fetchAnimalBreeds from "./fetchAnimalBreeds";
 
 // CUSTOM HOOK -> other hooks packaged together
 export default function useAnimalBreeds(animal) {
-  const [animalBreeds, setAnimalBreeds] = useState([]);
-  const [status, setStatus] = useState("unloaded");
+  const results = useQuery(["breeds", animal], fetchAnimalBreeds);
 
-  useEffect(() => {
-    if (!animal) {
-      setAnimalBreeds([]);
-    } else if (localCache[animal]) {
-      setAnimalBreeds(localCache[animal]);
-    } else {
-      requestAnimalBreeds();
-    }
-
-    async function requestAnimalBreeds() {
-      setAnimalBreeds([]);
-      setStatus("loading");
-
-      const response = await fetch(
-        `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
-      );
-      const json = await response.json();
-      localCache[animal] = json.breeds || [];
-      setAnimalBreeds(localCache[animal]);
-      setStatus("loaded");
-    }
-  }, [animal]);
-
-  return [animalBreeds, status];
+  return [results?.data?.breeds ?? [], results.status];
 }
+
+/*
+1. if results available, it's data available, and it's breeds available gimme that otherwise give me an empty array.
+*/
