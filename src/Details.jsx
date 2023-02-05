@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import fetchPets from "./fetchPets";
+import Carousel from "./Carousel";
 
 export default function Details() {
   const { id } = useParams();
@@ -19,6 +20,7 @@ export default function Details() {
 
   return (
     <div className="details">
+      <Carousel images={pet.images} />
       <div>
         <h1>{pet.name}</h1>
         <h2>
