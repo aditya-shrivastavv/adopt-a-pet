@@ -117,7 +117,7 @@ coverage/
    ```
 
 3. points to remember -
-   1. `vite` only recognizes `jsx` files and not `js` files. there are many reasons why this happens but, just remember that when working with `vite` use `jsx` files.
+   1. `vite` only recognizes `jsx` files and not `js` files when written html in js. there are many reasons why this happens but, just remember that when working with `vite` use `jsx` files.
    2. vite is used to build or package the project.
 
 ### 🟢 Configuring ESLint with React
